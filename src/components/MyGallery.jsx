@@ -13,11 +13,8 @@ class MyGallery extends Component {
 			console.log(response);
 			if (response.ok) {
 				let movie = await response.json();
-				let extMovie = { ...movie };
-				console.log(extMovie);
-				if (extMovie.Search && Array.isArray(extMovie.Search)) {
-					this.setState({ movie: extMovie.Search });
-				}
+				console.log(movie);
+				this.setState({ movie: movie.Search });
 			}
 		} catch (error) {
 			console.log(error);
